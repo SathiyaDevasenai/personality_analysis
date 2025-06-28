@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personality Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Thank you, {{ name }}!</h1>
+    <h2>Your Personality Traits Overview</h2>
+    <img src="/static/{{ chart }}" width="500"><br><br>
+    <ul>
+        {% for trait, value in scores.items() %}
+            <li><strong>{{ trait }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Take Again</a>
+</div>
+</body>
+</html>

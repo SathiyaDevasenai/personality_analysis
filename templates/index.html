@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personality Insight Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🧠 Personality Insight Analyzer</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Enter your name" required><br><br>
+        {% for i, q in questions %}
+            <div class="question">
+                <p><strong>Q{{ i+1 }}: {{ q.q }}</strong></p>
+                <label><input type="radio" name="q{{ i }}" value="Yes" required> Yes</label><br>
+                <label><input type="radio" name="q{{ i }}" value="Sometimes" required> Sometimes</label><br>
+                <label><input type="radio" name="q{{ i }}" value="No" required> No</label><br>
+            </div><br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
